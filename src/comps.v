@@ -62,7 +62,7 @@ endmodule
 
 
 module alu(A, B, ALU_operation, res, zero, overflow );
-	input [31:0] A, B;
+	input signed [31:0] A, B;
 	input [2:0] ALU_operation;
 	output [31:0] res;
 	output zero, overflow ;

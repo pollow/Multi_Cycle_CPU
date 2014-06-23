@@ -583,7 +583,7 @@ endmodule
          .data_in(Cpu_data4bus),
          .CPU_MIO(CPU_MIO), 
          .state(state) //Test
-     ); 
+     );
  
      Mem_B RAM_I_D(
          .clka(clk_m),

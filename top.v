@@ -49,16 +49,18 @@ module top;
 		// Initialize Inputs
 		clk_50mhz = 0;
 		BTN = 0;
-		SW = 0;
+		SW = 8'b00100001;
 
 		// Wait 100 ns for global reset to finish
 		#100;
-        
+		BTN[3] = 1;
+		#10;
+		for( i = 0; i < 5; i = i+1) #10 clk_50mhz = ~clk_50mhz;
+		BTN[3] = 0;
 		// Add stimulus here
-		for( i = 0; i < 10000; i = i+1) #10 clk_50mhz = ~clk_50mhz;
 	end
 	
-	//always #5 clk_50mhz = ~clk_50mhz;
+	always #5 clk_50mhz = ~clk_50mhz;
       
 endmodule
 
